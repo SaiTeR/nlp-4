@@ -2,10 +2,11 @@ from transformers import BertTokenizer, BertForMaskedLM
 from torch.nn import functional as F
 import torch
 
-text = "Он думает только о " + tokenizer.mask_token + ", и совсем не думает о слухах на " + tokenizer.mask_token + "."
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-uncased')
 model = BertForMaskedLM.from_pretrained('bert-base-multilingual-uncased', return_dict=True)
+
+text = "Он думает только о " + tokenizer.mask_token + "."
 
 input_data = tokenizer.encode_plus(text, return_tensors="pt")
 mask_indices = torch.where(input_data["input_ids"][0] == tokenizer.mask_token_id)
