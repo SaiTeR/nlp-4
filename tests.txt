@@ -1,0 +1,2 @@
+text = "Он думает только о " + tokenizer.mask_token + ",и совсем не думает о " + tokenizer.mask_token + "." # 1 и 10
+text = "Он думает только о " + tokenizer.mask_token + ". Ему плевать что могут подумать о нем в коллективе на" + tokenizer.mask_token + "." # 2 и 6
